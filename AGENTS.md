@@ -31,3 +31,11 @@ Build a vendor-neutral, open-source clinical data integrity and migration valida
 
 ## Deliverable contract
 Every change must document: task ID, hypothesis, tested input corpus and version, expected/actual results, false positive/negative impact, limitations, reproducibility commands, and source references. Mark statuses `PLANNED`, `IN_PROGRESS`, `BLOCKED`, `PASS`, or `FAIL` only with evidence.
+
+## Codex execution hierarchy (G0 extension)
+- **Codex Orchestrator** (`agents/codex-orchestrator.md`) checks dependency gates, dispatches exactly one scoped work order, and records PR/evidence state; it cannot approve its own work.
+- **Terminology and Standards Steward** (`agents/terminology-standards.md`) verifies standards versions, clinical code-set provenance and licensing before mappings or fixtures are used.
+- The two roles augment the seven baseline roles. Read `codex/README.md`, `codex/ROADMAP.md`, `codex/CODEX_PROMPT.md` and `docs/TASK_QUEUE.md` before beginning a Codex execution.
+- Every work order resides under `codex/orders/`; no claim of autonomous execution or task completion follows from adding a file.
+- Assign research tasks CLINOS-001 and CLINOS-002 first. Do not unblock synthetic-data, parser or semantic-claim work until specified source/mapping dependencies are reviewed.
+- Every PR must use the evidence fields in `.github/PULL_REQUEST_TEMPLATE.md`; do not merge with unresolved high-risk issues or unsupported clinical safety claims.
