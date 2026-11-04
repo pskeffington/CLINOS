@@ -1,0 +1,7 @@
+gap_id,topic,hypothesis,existing_reference,open_question,evidence_status,priority,owner
+GAP-001,EHI semantic loss,Clinical relationships may be lost in transformations,https://github.com/jmandel/ehi-to-fhir,Which relations are directly recoverable versus inferred?,UNVERIFIED,P0,Migration Audit Engineer
+GAP-002,Cross-EHR semantic comparison,API conformance may not imply data equivalence,https://github.com/inferno-framework/inferno-core,Which clinical invariants need independent tests?,UNVERIFIED,P0,Clinical Informatics Lead
+GAP-003,Patient identity and provenance,Clinical history provenance may differ across exports,https://hl7.org/fhir/R4/provenance.html,What provenance fields are mandatory for claim scope?,UNVERIFIED,P0,Clinical Informatics Lead
+GAP-004,Negative test coverage,Synthetic generators may not cover migration-specific corruption,https://github.com/synthetichealth/synthea,Which adversarial mutations expose silent errors?,UNVERIFIED,P0,Independent Validator
+GAP-005,Inpatient workflows,Open ambulatory EHRs may not cover hospital-wide transitions,https://github.com/openemr/openemr,What can be simulated without claiming clinical deployment?,UNVERIFIED,P1,Workflow Simulation Engineer
+GAP-006,Oncology validation,Research oncology modules may not provide end-to-end safety proof,https://github.com/openmrs/openmrs-core,Which non-clinical synthetic cases are suitable?,UNVERIFIED,P1,Clinical Informatics Lead
