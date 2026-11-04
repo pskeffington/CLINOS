@@ -12,12 +12,17 @@
 
 ## Dependency DAG
 ```text
-CLINOS-001 ─┬─> CLINOS-003 ─┬─> CLINOS-007 ─> CLINOS-008 ─┬─> CLINOS-009
-            ├─> CLINOS-005 ─┘                              ├─> CLINOS-010
-            └─> CLINOS-002 ─> CLINOS-004 ─> CLINOS-006 ─────┘
-                                                        └──> CLINOS-011, 012, 013 (later gate approval)
+CLINOS-001 ─────┐
+CLINOS-002 ─────┴─> G0 review ──────────────> CLINOS-004 (workspace substrate)
+
+CLINOS-001 + terminology approval ─────────> CLINOS-003 (synthetic contract)
+CLINOS-001 + CLINOS-003 ───────────────────> CLINOS-005 (reconciliation contract)
+CLINOS-003 + CLINOS-005 + runnable harness > CLINOS-006 (QA)
+CLINOS-003 + CLINOS-004 + CLINOS-005 ──────> CLINOS-007 (FHIR)
+CLINOS-005 + CLINOS-006 + CLINOS-007 ──────> CLINOS-008 (diff engine)
+CLINOS-001 + CLINOS-007 + CLINOS-008 ──────> CLINOS-009 (Epic EHI adapter)
 ```
-This diagram communicates broad ordering only; `docs/TASK_QUEUE.md` lists exact dependencies and acceptance criteria.
+CLINOS-001 and CLINOS-002 may execute independently and in parallel. This diagram is an overview; `docs/TASK_QUEUE.md` and the individual orders define the blocking dependencies. Later cross-EHR, workflow, oncology and reporting phases require their own gate reviews.
 
 ## Gate release contract
 | Gate | Completion evidence | Minimum independent review |
