@@ -4,12 +4,12 @@
 
 | ID | Work order | Priority | Depends on | Primary agent | Status |
 |---|---|---|---|---|---|
-| CLINOS-001 | [Standards/Epic EHI audit](../codex/orders/CLINOS-001-standards-ehi-audit.md) | P0 | none | Research Director | PLANNED |
-| CLINOS-002 | [OSS/competitive/license audit](../codex/orders/CLINOS-002-oss-competitive-audit.md) | P0 | none | Research Director | PLANNED |
-| CLINOS-003 | [Synthetic clinical ground truth](../codex/orders/CLINOS-003-synthetic-ground-truth.md) | P0 | CLINOS-001 + semantic approval | Informatics + Workflow | BLOCKED-DEPENDENCY |
-| CLINOS-004 | [Rust workspace/CI](../codex/orders/CLINOS-004-rust-workspace-ci.md) | P0 | G0 architecture baseline | Rust Systems | BLOCKED-DEPENDENCY |
-| CLINOS-005 | [Reconciliation schema](../codex/orders/CLINOS-005-reconciliation-schema.md) | P0 | CLINOS-001 + CLINOS-003 | Migration Audit | BLOCKED-DEPENDENCY |
-| CLINOS-006 | [Adversarial QA](../codex/orders/CLINOS-006-qa-adversarial.md) | P0 | CLINOS-003 + CLINOS-005 + test harness | Independent Validator | BLOCKED-DEPENDENCY |
+| [CLINOS-001](https://github.com/pskeffington/CLINOS/issues/2) | [Standards/Epic EHI audit](../codex/orders/CLINOS-001-standards-ehi-audit.md) | P0 | none | Research Director | PLANNED |
+| [CLINOS-002](https://github.com/pskeffington/CLINOS/issues/3) | [OSS/competitive/license audit](../codex/orders/CLINOS-002-oss-competitive-audit.md) | P0 | none | Research Director | PLANNED |
+| [CLINOS-003](https://github.com/pskeffington/CLINOS/issues/4) | [Synthetic clinical ground truth](../codex/orders/CLINOS-003-synthetic-ground-truth.md) | P0 | CLINOS-001 + semantic approval | Informatics + Workflow | BLOCKED-DEPENDENCY |
+| [CLINOS-004](https://github.com/pskeffington/CLINOS/issues/5) | [Rust workspace/CI](../codex/orders/CLINOS-004-rust-workspace-ci.md) | P0 | G0 architecture baseline | Rust Systems | BLOCKED-DEPENDENCY |
+| [CLINOS-005](https://github.com/pskeffington/CLINOS/issues/6) | [Reconciliation schema](../codex/orders/CLINOS-005-reconciliation-schema.md) | P0 | CLINOS-001 + CLINOS-003 | Migration Audit | BLOCKED-DEPENDENCY |
+| [CLINOS-006](https://github.com/pskeffington/CLINOS/issues/7) | [Adversarial QA](../codex/orders/CLINOS-006-qa-adversarial.md) | P0 | CLINOS-003 + CLINOS-005 + test harness | Independent Validator | BLOCKED-DEPENDENCY |
 | CLINOS-007 | FHIR R4 parse/normalize | P1 | CLINOS-003/004/005 | Rust + Informatics | PLANNED-LATER |
 | CLINOS-008 | Semantic integrity diff | P1 | CLINOS-005/006/007 | Migration Audit + Rust | PLANNED-LATER |
 | CLINOS-009 | Epic EHI export adapter | P1 | CLINOS-001/007/008 | Adapter engineering | PLANNED-LATER |
@@ -35,3 +35,11 @@
 
 ## Evidence linkage
 For each task add: issue URL (if created), branch, PR, owner, independent reviewer, evidence path, last checked commit SHA and reproducibility command. Do not report PASS without both execution and independent review.
+
+## GitHub issue index
+- [CLINOS-001 standards/EHI audit](https://github.com/pskeffington/CLINOS/issues/2)
+- [CLINOS-002 OSS/competitive audit](https://github.com/pskeffington/CLINOS/issues/3)
+- [CLINOS-003 synthetic ground truth](https://github.com/pskeffington/CLINOS/issues/4)
+- [CLINOS-004 Rust workspace/CI](https://github.com/pskeffington/CLINOS/issues/5)
+- [CLINOS-005 reconciliation schema](https://github.com/pskeffington/CLINOS/issues/6)
+- [CLINOS-006 independent QA](https://github.com/pskeffington/CLINOS/issues/7)
