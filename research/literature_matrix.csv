@@ -1,0 +1,13 @@
+id,domain,source_name,source_url,source_type,question,review_status,confidence,license_verification,notes
+SRC-001,standards,HL7 FHIR R4,https://hl7.org/fhir/R4/,primary_standard,Which resource and reference semantics must be preserved?,SEED_UNVERIFIED,unassessed,pending,Verify version scope and licensing
+SRC-002,standards,SMART App Launch,https://hl7.org/fhir/smart-app-launch/,primary_standard,Which authorization patterns can support lawful interoperability?,SEED_UNVERIFIED,unassessed,pending,Check supported versions
+SRC-003,standards,ONC Health IT Certification,https://www.healthit.gov/topic/certification-ehrs/certification-health-it,government,Which certification obligations apply to specific product claims?,SEED_UNVERIFIED,unassessed,pending,Certification is not blanket clinical safety approval
+SRC-004,epic,Epic on FHIR,https://fhir.epic.com/,vendor_documentation,Which public APIs and EHI export documentation are available?,SEED_UNVERIFIED,unassessed,pending,Do not assume unrestricted access or complete workflow coverage
+SRC-005,oss,OpenEMR,https://github.com/openemr/openemr,source_repository,What ambulatory EHR functions are implemented?,SEED_UNVERIFIED,unassessed,pending,Audit modules and exact license
+SRC-006,oss,OpenMRS,https://github.com/openmrs/openmrs-core,source_repository,What longitudinal record model and modules are implemented?,SEED_UNVERIFIED,unassessed,pending,Audit maintenance and modular scope
+SRC-007,oss,Medplum,https://github.com/medplum/medplum,source_repository,What FHIR-native functions and workflow primitives exist?,SEED_UNVERIFIED,unassessed,pending,Distinguish open components and hosted offerings
+SRC-008,oss,HAPI FHIR,https://github.com/hapifhir/hapi-fhir,source_repository,What reference FHIR parser and server behavior can be compared?,SEED_UNVERIFIED,unassessed,pending,Check versions and profiles
+SRC-009,oss,Inferno,https://github.com/inferno-framework/inferno-core,source_repository,Which conformance checks can be reused or adapted?,SEED_UNVERIFIED,unassessed,pending,Conformance not clinical equivalence
+SRC-010,oss,Synthea,https://github.com/synthetichealth/synthea,source_repository,Which deterministic synthetic fixtures can be generated?,SEED_UNVERIFIED,unassessed,pending,Assess scenario coverage
+SRC-011,oss,OHIF Viewer,https://github.com/OHIF/Viewers,source_repository,Which medical imaging and DICOMweb workflows are covered?,SEED_UNVERIFIED,unassessed,pending,Viewing is not full diagnostic PACS validation
+SRC-012,epic-research,EHI to FHIR,https://github.com/jmandel/ehi-to-fhir,source_repository,Which Epic export reconstruction and semantic gaps remain?,SEED_UNVERIFIED,unassessed,pending,Verify repo availability and stated limitations
