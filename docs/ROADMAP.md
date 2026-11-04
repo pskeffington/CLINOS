@@ -28,3 +28,6 @@ In scope: synthetic testing, lawful export parsing, standards adapters, fidelity
 
 ## Definition of done
 A gate is not done solely because code compiles. Evidence includes versioned fixtures, command transcript, test coverage, independent review, limitations and reproducible results.
+
+## Codex execution mapping
+The executable research and implementation passes are specified in [Codex Roadmap](../codex/ROADMAP.md), with authoritative status in [Task Queue](TASK_QUEUE.md). Each pass uses an individual [work order](../codex/orders/) and requires independent review. G0 scaffold files are not evidence of completed validation.
