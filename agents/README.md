@@ -18,3 +18,9 @@ Agents are roles for planning and review; these files do not imply autonomous ba
 - All test fixtures are synthetic until formal authorization says otherwise.
 - Research findings include primary URL, publication/version/date, access date, license, applicability, and confidence.
 - Escalate contradictions to Research Director and Informatics Lead; no silent resolution.
+
+## Additional roles
+| Codex Orchestrator | Dependency checking and task dispatch; no unilateral signoff | Execution packet, branch/PR and task status |
+| Terminology and Standards Steward | Specification, code-set license and canonical source approval | Reviewed terminology/source contract |
+
+**Operational files:** `codex/CODEX_PROMPT.md` is the master Codex instruction sheet; `codex/orders/` contains task-specific contracts. `docs/TASK_QUEUE.md` is the status source of truth.
