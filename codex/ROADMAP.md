@@ -43,3 +43,6 @@ Do not interpret a FHIR-valid bundle as proof of lossless migration. Do not adve
 
 ## Continuity during blocked waves
 The Block Resolution Agent may keep research moving on independent sources when hosted CI fails. For example, an INFRA startup_failure on CLINOS-004 does not block public-specification audit CLINOS-001 or OSS audit CLINOS-002; it also does not authorize CLINOS-003 semantic approval or bypass CLINOS-004 CI. Refer to `codex/CONTINUITY_POLICY.md`. Each fallback must be explicitly unblocked and must generate separate evidence.
+
+## Current Codex order
+The current next-pass directive is `codex/NEXT_EXECUTION_ORDER.md`. It separates standards and OSS source audits from the CLINOS-004 hosted-CI blocker; it provides acceptance criteria for conditional synthetic data contracts without prematurely authorizing semantic implementation.
