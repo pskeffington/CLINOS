@@ -1,0 +1,45 @@
+# CLINOS-001 standards / EHI research evidence
+
+**Task / issue:** CLINOS-001 / #2  
+**Branch:** `codex/clinos-001-standards-audit`  
+**Base:** `codex/g0-agent-roadmap-literature-scaffold` at `bbe40ea72cff62e9aa79a790bfb0eb6886a24437`  
+**Owner:** Research Director workflow (Codex execution)  
+**Independent reviewers:** Clinical Informatics Lead and Terminology Steward — pending  
+**Execution status:** IN_PROGRESS; primary-source inventory authored; independent approval and applicability mapping outstanding  
+**Data boundary:** public specifications and metadata only; no patient records, Epic endpoints, or exports accessed  
+**Claims:** no conformance, Epic compatibility, legal clearance, or clinical equivalence claims
+
+## Reproducible source check
+
+Access date recorded as 2026-11-04. Sources were opened via official publisher/owner websites. Primary references and exact versions/current-publication observations are in `research/standards_inventory.md` and CSV source rows SRC-001 through SRC-004 and SRC-013 through SRC-018.
+
+| Topic | Observed evidence | Limit / next review |
+|---|---|---|
+| FHIR | R4 v4.0.1, technical correction dated 2019-10-30; HL7 says current published base release is 5.0.0. R4 content has mixed normative/trial-use statuses. | Informatics must select use-case artifacts and versions. CC0 spec-text license does not grant third-party code-system rights. |
+| US Core | Current published at source was STU 9 v9.0.0, based on FHIR 4.0.1; page generated 2026-05-31; Trial-use, Maturity Level 3. | Minimum US Realm profiles/interactions are not whole-EHI coverage. Reviewer must choose whether applicable. |
+| SMART | STU 2.2 v2.2.0, active 2023-03-01, generated 2024-04-30, R4 IG. | Registration and server/operator authorization remain separate and can be out of band; no endpoint or auth was attempted. |
+| USCDI | Official version list identifies v7 (July 2026) as current at access. | Data classes/elements are not a FHIR schema or complete EHI mapping. |
+| ONC EHI Export | 45 CFR 170.315(b)(10) covers applicable single-patient and patient-population EHI exports in computable electronic format and up-to-date public format docs. | Criterion does not mandate FHIR or guarantee instance completeness/semantic fidelity. It applies to relevant certified products/developers. |
+| Epic public docs | Epic on FHIR documentation lists APIs across DSTU2/STU3/R4 and registration/customer authorization constraints; EHI Tables docs describe TSV/schema and warn local versions/customization differ. | Public docs are not authorization to access a customer installation or proof of full interoperability. Public schema terms not legally reviewed. |
+| HL7 v2 | Family identified as separate from FHIR. | Applicable edition, local profile, trigger event and workflow were not established; source row remains UNRESOLVED. |
+| Terminology | FHIR license explicitly says implementer rights for referenced third-party SNOMED CT, LOINC, CPT and other content are separate. | No code sets added. SNOMED/LOINC intended-use and redistribution clearance remain unresolved. |
+
+## Checks and status
+
+- Read-only official-source research: PASS as a research action; no external implementation tested.
+- Standards inventory and source matrix additions: authored, pending independent review.
+- HL7 v2 edition/profile applicability: UNRESOLVED.
+- Terminology legal/use clearance: NOT_TESTED / pending responsible review.
+- Clinical mapping approval: NOT_TESTED; no mappings were implemented.
+- Independent review: NOT_TESTED.
+
+## Changed artifacts
+
+- `research/standards_inventory.md`
+- `research/literature_matrix.csv`
+- `docs/TASK_QUEUE.md`
+- `evidence/CLINOS-001/SUMMARY.md`
+
+## Next decision
+
+Informatics and Terminology reviewers should confirm candidate FHIR/US Core/USCDI versions, applicable profiles, and code-system use terms. Until then CLINOS-003 synthetic clinical ground truth and CLINOS-005 semantic reconciliation remain blocked. CLINOS-007 must not begin normalization implementation from this inventory alone.

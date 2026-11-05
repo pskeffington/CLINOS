@@ -4,7 +4,7 @@
 
 | ID | Work order | Priority | Depends on | Primary agent | Status |
 |---|---|---|---|---|---|
-| [CLINOS-001](https://github.com/pskeffington/CLINOS/issues/2) | [Standards/Epic EHI audit](../codex/orders/CLINOS-001-standards-ehi-audit.md) | P0 | none | Research Director | PLANNED |
+| [CLINOS-001](https://github.com/pskeffington/CLINOS/issues/2) | [Standards/Epic EHI audit](../codex/orders/CLINOS-001-standards-ehi-audit.md) | P0 | none | Research Director | IN_PROGRESS (primary inventory drafted; Informatics/Terminology independent review pending; branch `codex/clinos-001-standards-audit`; evidence `evidence/CLINOS-001/SUMMARY.md`) |
 | [CLINOS-002](https://github.com/pskeffington/CLINOS/issues/3) | [OSS/competitive/license audit](../codex/orders/CLINOS-002-oss-competitive-audit.md) | P0 | none | Research Director | PLANNED |
 | [CLINOS-003](https://github.com/pskeffington/CLINOS/issues/4) | [Synthetic clinical ground truth](../codex/orders/CLINOS-003-synthetic-ground-truth.md) | P0 | CLINOS-001 + semantic approval | Informatics + Workflow | BLOCKED-DEPENDENCY |
 | [CLINOS-004](https://github.com/pskeffington/CLINOS/issues/5) | [Rust workspace/CI](../codex/orders/CLINOS-004-rust-workspace-ci.md) | P0 | G0 architecture baseline | Rust Systems | BLOCKED-DEPENDENCY |
