@@ -40,3 +40,6 @@ Stop on source license ambiguity, privacy leakage, PHI discovery, unmapped clini
 
 ## Scope acceptance policy
 Do not interpret a FHIR-valid bundle as proof of lossless migration. Do not advertise Epic equivalence, Epic support, certification, or clinical correctness without independently reproduced and scoped evidence.
+
+## Continuity during blocked waves
+The Block Resolution Agent may keep research moving on independent sources when hosted CI fails. For example, an INFRA startup_failure on CLINOS-004 does not block public-specification audit CLINOS-001 or OSS audit CLINOS-002; it also does not authorize CLINOS-003 semantic approval or bypass CLINOS-004 CI. Refer to `codex/CONTINUITY_POLICY.md`. Each fallback must be explicitly unblocked and must generate separate evidence.
