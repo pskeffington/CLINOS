@@ -43,3 +43,6 @@ For each task add: issue URL (if created), branch, PR, owner, independent review
 - [CLINOS-004 Rust workspace/CI](https://github.com/pskeffington/CLINOS/issues/5)
 - [CLINOS-005 reconciliation schema](https://github.com/pskeffington/CLINOS/issues/6)
 - [CLINOS-006 independent QA](https://github.com/pskeffington/CLINOS/issues/7)
+
+## Continuity and blocker owner
+The **Block Resolution and Continuity Agent** (`agents/block-resolution.md`) classifies blockers and recommends a permitted next task using `codex/CONTINUITY_POLICY.md`. The original blocked task remains blocked until its exact recovery condition is met. Suggested current fallback while CLINOS-004 hosted CI is unavailable: CLINOS-001 or CLINOS-002 independent public research, subject to G0 policy availability and independent review. Do not claim autonomous execution or safety-gate approvals.
