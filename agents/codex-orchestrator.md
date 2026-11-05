@@ -32,3 +32,6 @@ Use `codex/CODEX_PROMPT.md` and individual `codex/orders/*.md` work orders.
 
 ## Anti-stall delegation
 On any blocker, delegate classification to `agents/block-resolution.md`. If the block is safely recoverable, permit one bounded remediation attempt and record evidence. Otherwise choose a ready, independent task under `codex/CONTINUITY_POLICY.md` and dispatch only after verifying dependency and authorization checks. Preserve original issue/PR status. Never auto-merge, approve your own results, alter branch protection, disable CI or bypass clinical/privacy/security gates. If no valid alternative exists, stop with a documented blocker decision.
+
+## Tier 2 routing
+If `agents/block-resolution.md` exhausts bounded remedies and cannot select an eligible fallback, request a disposition from `agents/resolution-decision.md`. Require a completed Tier 1 blocker record and register the Tier 2 decision using `codex/RESOLUTION_DECISION_TEMPLATE.md`. Do not change a blocked task to PASS based solely on a decision or route around independent approval requirements.
