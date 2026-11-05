@@ -1,0 +1,53 @@
+# CLINOS standards and public-interface inventory
+
+**Task:** CLINOS-001 / issue #2  
+**Branch:** `codex/clinos-001-standards-audit`  
+**Research access date:** 2026-11-04  
+**Status:** Primary-source inventory completed; independent Informatics and Terminology review pending. This is not standards-conformance evidence or clinical approval.
+
+## Standards and interface families
+
+| Family | Current/versioned primary source | Scope supported by source | Constraints and limitations | CLINOS disposition |
+|---|---|---|---|---|
+| Base FHIR | [HL7 FHIR R4 v4.0.1](https://hl7.org/fhir/R4/), technical correction dated 2019-10-30 | Mixed normative and trial-use specification; individual artifacts have separate standards status and maturity. FHIR R5 5.0.0 is a later published version. | HL7 states generalized resources must be assessed for fitness in their intended purpose. Core spec text is CC0 with HL7 trademark requirements; referenced third-party terminology/artifact rights are separate. Some resources/content remain trial-use. | Preserve R4 as a candidate compatibility target only where a scoped use case selects it. Record artifact version/profile and terminology separately. No equivalence implication. |
+| US Core | [US Core STU 9 v9.0.0](https://hl7.org/fhir/us/core/STU9/), generated 2026-05-31, based on FHIR R4 | Current published US Realm IG at access. Defines minimum constraints/profiles and, for interaction-support implementations, minimum RESTful interactions. It describes itself as Trial-use, Maturity Level 3. | A “floor” for US Realm exchange; not a complete EHI inventory, not every implementation's enabled capability, and not proof of semantic or migration fidelity. HL7’s [IP review](https://hl7.org/fhir/us/core/STU9/qa-ipreview.html) identifies third-party material (including AMA, AHA/NUBC, ISO, IEEE and USPS content) with distinct use terms; FHIR CC0 does not by itself grant rights to redistribute those materials. | Candidate profile layer for future scoped structural conformance after reviewer selects a use case. Do not copy guide-derived materials or licensed vocabularies into fixtures before item-specific review. |
+| SMART App Launch | [SMART App Launch STU 2.2 v2.2.0](https://hl7.org/fhir/smart-app-launch/STU2.2/), active 2023-03-01, generated 2024-04-30, based on R4 | OAuth 2.0-based discovery, launch, client authorization/authentication and scopes for FHIR-based systems. | The server controls app registration and authorization. SMART documentation explicitly describes registration as potentially out-of-band; the standard does not grant credentials or access. The IG page identifies publisher/IP statements and third-party material, but no blanket CC0 grant for all guide content was verified. Epic/customer availability must be separately authorized. | Security/interface reference only. No auth client, live endpoint, or Epic connection is in the present task. |
+| USCDI | [ASTP/ONC official version list](https://isp.healthit.gov/all-uscdi-versions); USCDI v7 published July 2026 | Federal standardized data classes and elements for nationwide exchange. v7 is the latest official version listed at access; v6 is July 2025. | USCDI identifies data classes/elements; it is not a wire schema, profile package, exhaustive EHI inventory, or semantic mapping between source and target. | Use only as a future candidate coverage checklist after Informatics review; not as a complete resource mapping. |
+| EHI Export regulation / test method | [45 CFR 170.315(b)(10)](https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-D/part-170/subpart-C/section-170.315) and [ONC EHI Export test method/CCG](https://healthit.gov/test-method/electronic-health-information-export) | For applicable certified Health IT products, the regulation covers single-patient and population exports of the EHI the product can store **at the time of certification**; exports must be electronic/computable, include a publicly accessible format hyperlink, and format documentation must be kept up to date. | The regulation does not prescribe FHIR or a particular format. It is a product certification criterion, not a general end-user entitlement or proof that a particular post-certification deployment/export is complete or semantically faithful. The ONC CCG is informative and says public use/no resale; it is not a substitute for regulation. | Describe the precise certification scope only. This criterion does not prove any Epic deployment is compliant or authorize access to an export. |
+| Epic public FHIR documentation | [Epic on FHIR FAQ](https://fhir.epic.com/FAQ/Index?Category=1016&Question=137), [API documentation](https://fhir.epic.com/Documentation) | Public developer documentation describes APIs across DSTU2, STU3 and R4 and public sandbox/testing pathways. | Each API/version and each customer endpoint/configuration is specific. Site terms, API subscription agreements, OAuth/app registration, customer authorization and endpoint configuration govern actual use. Public documentation is not blanket production authorization or complete EHI export coverage. | Documented interface source only. No production access, authorization attempt, unsupported compatibility, or vendor endorsement claim. |
+| Epic EHI Tables export documentation | [Epic EHI Tables](https://open.epic.com/EHITables) and [schema index](https://open.epic.com/EHITables/GetTable/_index.htm) | Publicly described EHI Tables export is computable TSV with table/column schema documentation. The schema index showed a November 2026 released-version snapshot dated 2026-11-03 at access. | Epic explicitly says a specific organization's documentation may differ due to Epic version, customization, or local definition of EHI. Public docs do not authorize access to an organization's data or remove site terms. | Public schema can inform a later coverage inventory, not a parser claim. No export data was accessed. |
+| HL7 v2 | [HL7 v2 standards overview](https://www.hl7.org/implement/standards/product_brief.cfm?product_id=185) | HL7 v2 is a separate messaging standard family; do not conflate message segments/events with FHIR resources. | This pass did not verify a specific v2 edition, profile, or implementation guide applicable to the target workflow. Interface-specific local profiles and versions remain unknown. | `UNRESOLVED` for CLINOS mapping scope; conduct a separately scoped edition/profile audit before any v2 parser. |
+| Terminology | [FHIR R4 license and third-party notes](https://hl7.org/fhir/R4/license.html), [SNOMED CT licensing](https://www.snomed.org/licensing), [LOINC terms](https://loinc.org/license/) | FHIR references external terminology systems and includes some redistributed examples/artifacts. | HL7 explicitly says implementer rights for third-party content are not granted by HL7's FHIR license. SNOMED CT, LOINC, CPT, ICD and other code sets have different rights and jurisdiction/use terms. This pass did not complete legal review for any fixture redistribution. | Keep terminology codes/value sets out of new fixtures until a reviewer confirms source, version, applicable use terms and redistribution rights. Represent unresolved mappings explicitly. |
+
+## Candidate resource scope disposition (not a mapping)
+
+The CLINOS-001 work order names the following candidates. No target workflow, source inventory, profile/version applicability, or semantic contract has been approved. Each remains `CANDIDATE_NOT_SELECTED`; this table is a scope register only and does not propose element mappings, fixture content, or equivalence claims.
+
+| Candidate R4 resource(s) | Current disposition | Reason / required decision |
+|---|---|---|
+| Patient | `CANDIDATE_NOT_SELECTED` | No use case or source identity fields selected; Informatics review must define applicable identity/provenance boundaries. |
+| Encounter | `CANDIDATE_NOT_SELECTED` | No workflow or source event model selected; relationships and lifecycle semantics are unassessed. |
+| Observation | `CANDIDATE_NOT_SELECTED` | No measurement/result use case, terminology, units, or profile selected. |
+| ServiceRequest | `CANDIDATE_NOT_SELECTED` | No order/referral workflow or fulfillment relationship selected. |
+| DiagnosticReport | `CANDIDATE_NOT_SELECTED` | No result/report workflow or referenced-resource scope selected. |
+| Provenance | `CANDIDATE_NOT_SELECTED` | No source lineage or authorship requirements selected. |
+| Medication, MedicationRequest, MedicationStatement, MedicationAdministration, MedicationDispense | `CANDIDATE_NOT_SELECTED` | Medication workflow, source representation, profile, terminology and legal rights have not been reviewed; no medication semantics are inferred. |
+
+Selection and mapping remain gated on a defined synthetic research workflow and Clinical Informatics/Terminology review. The unresolved scope is recorded in `research/gap_register.csv` (GAP-014/015); no resource normalization implementation is authorized by this inventory.
+
+## Source and claim boundaries
+
+- The initial publisher/owner source pass was accessed 2026-11-04; eCFR §170.315(b)(10) and the US Core STU 9 IP review were refreshed 2026-11-05. Exact URLs, version/date observations, rights notes and limitations are tracked in `research/literature_matrix.csv`.
+- A version being current at access does not make it applicable to every product, workflow, customer installation, profile, or legal requirement.
+- “FHIR shaped”, FHIR-valid, US Core profile conformance, SMART-capable, certified EHI export, and semantically equivalent are different claims with different evidence burdens.
+- Epic FHIR API documentation and Epic EHI Tables schemas are separate interface families. Neither establishes the behavior or completeness of the other.
+- No Epic endpoint was contacted; no patient record/export, including public demonstration artifacts containing real data, was downloaded or processed.
+- Independent Clinical Informatics and Terminology Steward review is pending. Do not mark the task PASS or unblock CLINOS-003/005 until reviewers disposition the proposed scope.
+
+## Review checklist
+
+1. Confirm which use cases require base R4 versus current US Core, and record the chosen versions.
+2. Confirm official USCDI-v7-to-US-Core scope intended for the project (not a one-to-one resource mapping assumption).
+3. Review terminology/code-system rights before any codes or value sets enter fixtures or tests.
+4. Distinguish ONC certification obligations from CLINOS product claims and from an individual organization's export configuration.
+5. Review Epic public EHI documentation reuse terms and whether any future access route is authorized.
