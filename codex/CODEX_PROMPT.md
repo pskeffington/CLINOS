@@ -35,3 +35,6 @@ If tool access prevents execution, create a reproducible plan and mark the affec
 
 ## Block decision / continuation protocol
 When a command, CI run, dependency, reviewer, source or permission blocks progress, do not end in a retry loop. Invoke the role documented in `agents/block-resolution.md`; classify the incident according to `codex/CONTINUITY_POLICY.md`, preserve original status and record a blocker decision using `codex/BLOCK_DECISION_TEMPLATE.md`. Attempt only permitted bounded remediation. If unresolved, dispatch the highest-priority independent READY task that passes all gates; otherwise stop with exact escalation and reopening conditions. No auto-approval, CI disabling, privilege escalation or clinical/privacy override. Include BLOCKER_ID and FALLBACK_TASK in the final report.
+
+## Unresolved Tier 1 blocker escalation
+After Block Resolution Agent reports unresolved, invoke the Resolution Decision Agent following `codex/ESCALATION_CHAIN.md`. Include the Tier 1 record, exact SHA, logs, attempts, blockers, alternative tasks and approval constraints. Obtain a documented Tier 2 disposition before splitting scope or selecting a different engineering approach. Respect all original safety and review gates. Report the resolution decision ID in the task summary.
