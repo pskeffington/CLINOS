@@ -34,3 +34,6 @@ FALLBACK is not a status change for the original blocked task. Record independen
 
 ## Evidence ledger
 Every decision records task, exact SHA, CI run URL/job evidence, classification, chosen action, prior attempts, authorization, selected alternative and next recheck criterion. Template: `codex/BLOCK_DECISION_TEMPLATE.md`. Store decisions with the relevant issue and PR; use the file template for durable records.
+
+## Tier 2 decision escalation
+When permitted retries and fallback selection fail, do not loop or invent a PASS. Route the complete blocker record to `agents/resolution-decision.md` using `codex/ESCALATION_CHAIN.md`. Record the outcome with `codex/RESOLUTION_DECISION_TEMPLATE.md`; resume only authorized independent work. A Tier 2 disposition is not release approval.
