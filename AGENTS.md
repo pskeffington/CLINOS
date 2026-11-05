@@ -45,3 +45,8 @@ Every change must document: task ID, hypothesis, tested input corpus and version
 - Follow `codex/CONTINUITY_POLICY.md` and log decisions using `codex/BLOCK_DECISION_TEMPLATE.md`.
 - This agent **cannot** override clinical, privacy, security, licensing, independent review, or protected-branch gates. Stop on sensitive-data/access incidents.
 - A blocked task remains BLOCKED or NOT_TESTED regardless of progress on alternative tasks. Agent instructions alone do not create an autonomous background runner.
+
+## Tier 2 Resolution Decision Agent
+- **Resolution Decision Agent** (`agents/resolution-decision.md`) receives unresolved Tier 1 blocker records and decides whether to split scope, select an alternate approved method, defer, research, escalate or stop.
+- Follow `codex/ESCALATION_CHAIN.md` and `codex/RESOLUTION_DECISION_TEMPLATE.md`.
+- Tier 2 decisions do not override CI, human review, clinical, privacy, security, licensing, or branch-protection requirements. The original task remains blocked until evidence establishes recovery.
