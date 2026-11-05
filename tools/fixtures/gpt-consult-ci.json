@@ -1,0 +1,19 @@
+{
+  "task_id": "CLINOS-004",
+  "problem": "Hosted CI workflow completes with startup_failure before any runner job is allocated.",
+  "observed_behavior": "Exact-head workflow has no jobs or artifacts; local synthetic Rust checks pass.",
+  "attempts": [
+    "Inspected workflow metadata",
+    "Checked job availability; none returned"
+  ],
+  "constraints": [
+    "Do not disable required CI",
+    "Do not change repository permissions or secrets",
+    "Keep draft PR blocked pending hosted evidence"
+  ],
+  "acceptance_criteria": [
+    "Determine a documented cause or declare unknown",
+    "Propose reversible diagnostic steps",
+    "Preserve exact-head hosted validation requirement"
+  ]
+}
