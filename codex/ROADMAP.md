@@ -46,3 +46,6 @@ The Block Resolution Agent may keep research moving on independent sources when 
 
 ## Current Codex order
 The current next-pass directive is `codex/NEXT_EXECUTION_ORDER.md`. It separates standards and OSS source audits from the CLINOS-004 hosted-CI blocker; it provides acceptance criteria for conditional synthetic data contracts without prematurely authorizing semantic implementation.
+
+## CLINOS-014 GPT consultation hardening
+The optional consultation agent is an engineering tooling task separate from clinical semantics. See `codex/NEXT_PASS_004.md` and `codex/orders/CLINOS-014-gpt-consult-hardening.md`. It can be developed with synthetic/public inputs while source and clinical mapping reviews remain open, but its output remains untrusted and cannot bypass a gate.

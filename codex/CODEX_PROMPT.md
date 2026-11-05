@@ -44,3 +44,6 @@ Read `codex/NEXT_EXECUTION_ORDER.md` before selecting follow-up work. Prioritize
 
 ## GPT solution mechanics path
 For an unresolved technical issue, Tier 2 may request an optional GPT consultation under `codex/GPT_CONSULTATION.md`. Create a curated allowlisted payload, preview locally, and obtain explicit operator approval before calling the provider. Treat the returned JSON as unverified engineering advice, validate mechanisms with primary evidence and tests, and continue standard review gates. No credentials/PHI/private logs may be transmitted. If network/configuration absent, continue offline with `NOT_QUERIED`.
+
+## Active next-pass execution packet — CLINOS-014
+Read `codex/NEXT_PASS_004.md` and `codex/orders/CLINOS-014-gpt-consult-hardening.md` before implementing the GPT consultation tooling. This packet directs offline client hardening, failure-path tests and guarded Tier 2 integration. It separately authorizes only research/specification preparation for CLINOS-003 until Informatics and Terminology signoffs exist. Preserve the draft PRs and record exact-head test evidence; do not call the external provider automatically.
