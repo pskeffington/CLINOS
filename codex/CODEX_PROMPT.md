@@ -32,3 +32,6 @@ INDEPENDENT REVIEW STATUS: ...
 NEXT TASK: ...
 
 If tool access prevents execution, create a reproducible plan and mark the affected check NOT_TESTED. Never write a fabricated benchmark or compatibility claim.
+
+## Block decision / continuation protocol
+When a command, CI run, dependency, reviewer, source or permission blocks progress, do not end in a retry loop. Invoke the role documented in `agents/block-resolution.md`; classify the incident according to `codex/CONTINUITY_POLICY.md`, preserve original status and record a blocker decision using `codex/BLOCK_DECISION_TEMPLATE.md`. Attempt only permitted bounded remediation. If unresolved, dispatch the highest-priority independent READY task that passes all gates; otherwise stop with exact escalation and reopening conditions. No auto-approval, CI disabling, privilege escalation or clinical/privacy override. Include BLOCKER_ID and FALLBACK_TASK in the final report.
