@@ -21,14 +21,22 @@ mod tests {
 
     #[test]
     fn no_false_clinical_pass() {
-        let good = inspect_json(r#"{"resourceType":"Bundle","entry":[{"resource":{"resourceType":"Patient"}}]}"#)
-            .expect("valid shape");
-        assert_eq!(clinical_equivalence_status(&good), EvidenceStatus::NotTested);
+        let good = inspect_json(
+            r#"{"resourceType":"Bundle","entry":[{"resource":{"resourceType":"Patient"}}]}"#,
+        )
+        .expect("valid shape");
+        assert_eq!(
+            clinical_equivalence_status(&good),
+            EvidenceStatus::NotTested
+        );
     }
 
     #[test]
     fn unknown_entry_is_unresolved() {
         let ambiguous = inspect_json(r#"{"resourceType":"Bundle","entry":[{}]}"#).expect("shape");
-        assert_eq!(clinical_equivalence_status(&ambiguous), EvidenceStatus::Unresolved);
+        assert_eq!(
+            clinical_equivalence_status(&ambiguous),
+            EvidenceStatus::Unresolved
+        );
     }
 }

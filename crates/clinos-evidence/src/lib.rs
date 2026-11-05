@@ -25,9 +25,10 @@ mod tests {
 
     #[test]
     fn report_contains_no_patient_identifiers() {
-        let input = r#"{"resourceType":"Patient","id":"PHI-DO-NOT-REPORT","name":[{"family":"Secret"}]}"#;
-        let report = preflight_report(&inspect_json(input).unwrap(), EvidenceStatus::NotTested)
-            .to_string();
+        let input =
+            r#"{"resourceType":"Patient","id":"PHI-DO-NOT-REPORT","name":[{"family":"Secret"}]}"#;
+        let report =
+            preflight_report(&inspect_json(input).unwrap(), EvidenceStatus::NotTested).to_string();
         assert!(!report.contains("PHI-DO-NOT-REPORT"));
         assert!(!report.contains("Secret"));
         assert!(report.contains("NOT_TESTED"));
