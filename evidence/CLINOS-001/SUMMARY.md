@@ -66,3 +66,9 @@ git merge-tree --write-tree --merge-base \
 ```
 
 The preview reported content conflicts in `docs/TASK_QUEUE.md`, `research/gap_register.csv`, and `research/literature_matrix.csv`. This is a merge-preview result only; neither research branch was merged or modified by the preview. Both PRs are individually mergeable against G0. Reconcile the shared files in a reviewed integration change after the independent research reviews; do not treat the conflict resolution as a standards, legal, or clinical approval.
+
+## Role-separated review-readiness check
+
+A read-only Clinical Informatics / Terminology evidence audit was completed against branch snapshot `8034152c939a43b0023fcbf391e3453a8cc25f81` on 2026-11-05. It found the standards/version statements, EHI export scope, licensing caveats, Epic/HL7 v2 limitations, candidate-only resource list, gap coverage, and integration preview sufficient to invite human review. The audit did not identify a blocker to review readiness.
+
+This is an internal role-separated evidence check, **not** a GitHub review, human clinical or terminology approval, legal determination, hosted CI result, or pass of CLINOS-001. Human Informatics/Terminology review, legal review of unresolved rights, and any mapping approval remain `NOT_TESTED`; task status remains `IN_PROGRESS`.
