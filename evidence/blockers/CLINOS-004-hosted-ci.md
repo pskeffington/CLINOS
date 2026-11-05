@@ -35,3 +35,13 @@
 - **Reviewers required:** independent QA/security review for CLINOS-004; G0 governance review remains separate.
 - **Reopening criterion:** A new workflow attempt for the exact current PR head that allocates jobs or yields logs; successful exact-head run plus required independent reviews.
 - **Evidence status:** UNRESOLVED; this disposition is not release approval.
+
+## Follow-up check — 2026-11-05
+
+- **Current PR #8 head checked:** `0ee22ae16fff9b35c3eda6075089577e71b57601`.
+- **Latest push run:** [41942369785](https://github.com/pskeffington/CLINOS/actions/runs/41942369785), exact-head match, completed with `startup_failure`.
+- **Job and artifact inspection:** jobs `total_count: 0`; artifacts `total_count: 0`. No action-step logs or actionable root-cause diagnostics were exposed.
+- **Assessment:** This adds another observed pre-job startup failure; runner/service provisioning remains an inference, not a diagnosed cause. Local checks remain separate evidence and do not satisfy hosted CI.
+- **Tier 1 decision:** retain `FALLBACK`; no job-level rerun is available without an allocated job. Do not change workflow policy or permissions to force a check result.
+- **Tier 2 decision:** retain `DEFER` (`RDA-20261104-001`). Continue the independent CLINOS-001/002 research branches while the blocker is open.
+- **Reopen when:** a run at the then-current PR #8 head allocates a job or exposes diagnostic logs. If a supported retry becomes available, perform at most one bounded retry; require successful exact-head hosted checks and independent QA/security review before advancing CLINOS-004.
