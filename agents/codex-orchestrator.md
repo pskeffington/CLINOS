@@ -29,3 +29,6 @@ Return: TASK ID; BRANCH; CHANGED FILES; COMMANDS RUN; PASS/FAIL/NOT TESTED; LINK
 
 ## Prompt entrypoint
 Use `codex/CODEX_PROMPT.md` and individual `codex/orders/*.md` work orders.
+
+## Anti-stall delegation
+On any blocker, delegate classification to `agents/block-resolution.md`. If the block is safely recoverable, permit one bounded remediation attempt and record evidence. Otherwise choose a ready, independent task under `codex/CONTINUITY_POLICY.md` and dispatch only after verifying dependency and authorization checks. Preserve original issue/PR status. Never auto-merge, approve your own results, alter branch protection, disable CI or bypass clinical/privacy/security gates. If no valid alternative exists, stop with a documented blocker decision.
