@@ -41,3 +41,6 @@ After Block Resolution Agent reports unresolved, invoke the Resolution Decision 
 
 ## Next authorized development pass
 Read `codex/NEXT_EXECUTION_ORDER.md` before selecting follow-up work. Prioritize independently reviewable CLINOS-001/002 source audits while CI startup and G0 approvals remain outstanding. Route unresolved blockers through Tier 1 and Tier 2. No clinical semantics implementation until approved contracts and evidence exist.
+
+## GPT solution mechanics path
+For an unresolved technical issue, Tier 2 may request an optional GPT consultation under `codex/GPT_CONSULTATION.md`. Create a curated allowlisted payload, preview locally, and obtain explicit operator approval before calling the provider. Treat the returned JSON as unverified engineering advice, validate mechanisms with primary evidence and tests, and continue standard review gates. No credentials/PHI/private logs may be transmitted. If network/configuration absent, continue offline with `NOT_QUERIED`.
