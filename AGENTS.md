@@ -39,3 +39,9 @@ Every change must document: task ID, hypothesis, tested input corpus and version
 - Every work order resides under `codex/orders/`; no claim of autonomous execution or task completion follows from adding a file.
 - Assign research tasks CLINOS-001 and CLINOS-002 first. Do not unblock synthetic-data, parser or semantic-claim work until specified source/mapping dependencies are reviewed.
 - Every PR must use the evidence fields in `.github/PULL_REQUEST_TEMPLATE.md`; do not merge with unresolved high-risk issues or unsupported clinical safety claims.
+
+## Block Resolution Agent (continuity, no gate bypass)
+- **Block Resolution and Continuity Agent** (`agents/block-resolution.md`) diagnoses CI/dependency/tool/review blockers and dispatches safe fallback tasks through the Codex Orchestrator.
+- Follow `codex/CONTINUITY_POLICY.md` and log decisions using `codex/BLOCK_DECISION_TEMPLATE.md`.
+- This agent **cannot** override clinical, privacy, security, licensing, independent review, or protected-branch gates. Stop on sensitive-data/access incidents.
+- A blocked task remains BLOCKED or NOT_TESTED regardless of progress on alternative tasks. Agent instructions alone do not create an autonomous background runner.
