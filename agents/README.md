@@ -29,3 +29,5 @@ Agents are roles for planning and review; these files do not imply autonomous ba
 **Operational files:** `codex/CODEX_PROMPT.md` is the master Codex instruction sheet; `codex/orders/` contains task-specific contracts. `docs/TASK_QUEUE.md` is the status source of truth.
 
 **Blocker control:** `agents/block-resolution.md`, `codex/CONTINUITY_POLICY.md` and `codex/BLOCK_DECISION_TEMPLATE.md` define safe continuation; they do not launch an always-on service.
+
+**Tier 2 escalation:** The Resolution Decision Agent (`agents/resolution-decision.md`) receives unresolved cases from the Block Resolution Agent, selects a documented disposition, and returns it to the Codex Orchestrator. See `codex/ESCALATION_CHAIN.md`.
