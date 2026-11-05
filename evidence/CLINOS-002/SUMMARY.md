@@ -10,6 +10,8 @@
 **Related independent task:** CLINOS-001 is also IN_PROGRESS on `codex/clinos-001-standards-audit`, draft PR #9
 **Data boundary:** public source/metadata only; no candidate code cloned/built, no networked service tested, no patient/export data fetched
 
+**Cross-task CI status:** PR #8 head `906f2cdc823470a234b3aa2fb7677b29d163803b`; exact-head run [41944441203](https://github.com/pskeffington/CLINOS/actions/runs/41944441203) ended `startup_failure` with zero jobs/artifacts. Hosted CI remains blocked; Tier 1 fallback and Tier 2 DEFER remain in effect.
+
 ## Method and reproducibility
 
 Read-only GitHub metadata checks were run for each candidate:
