@@ -1,0 +1,15 @@
+[package]
+name = "clinos-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[[bin]]
+name = "clinos"
+path = "src/main.rs"
+
+[dependencies]
+clinos-fhir.workspace = true
+clinos-integrity.workspace = true
+clinos-evidence.workspace = true

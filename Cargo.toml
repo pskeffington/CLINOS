@@ -1,0 +1,23 @@
+[workspace]
+members = [
+  "crates/clinos-core",
+  "crates/clinos-fhir",
+  "crates/clinos-integrity",
+  "crates/clinos-evidence",
+  "crates/clinos-cli",
+]
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
+version = "0.1.0"
+license = "Apache-2.0"
+repository = "https://github.com/pskeffington/CLINOS"
+rust-version = "1.81"
+
+[workspace.dependencies]
+serde_json = "1.0"
+clinos-core = { path = "crates/clinos-core" }
+clinos-fhir = { path = "crates/clinos-fhir" }
+clinos-integrity = { path = "crates/clinos-integrity" }
+clinos-evidence = { path = "crates/clinos-evidence" }
