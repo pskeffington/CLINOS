@@ -24,3 +24,7 @@ Agents are roles for planning and review; these files do not imply autonomous ba
 | Terminology and Standards Steward | Specification, code-set license and canonical source approval | Reviewed terminology/source contract |
 
 **Operational files:** `codex/CODEX_PROMPT.md` is the master Codex instruction sheet; `codex/orders/` contains task-specific contracts. `docs/TASK_QUEUE.md` is the status source of truth.
+
+| Block Resolution and Continuity Agent | Diagnose blockers, bounded retry, independent fallback selection; no approval overrides | Structured blocker decision and next eligible task |
+
+**Blocker control:** `agents/block-resolution.md`, `codex/CONTINUITY_POLICY.md` and `codex/BLOCK_DECISION_TEMPLATE.md` define safe continuation; they do not launch an always-on service.
