@@ -62,3 +62,9 @@ git merge-tree --write-tree --merge-base \
 ```
 
 The preview reported content conflicts in `docs/TASK_QUEUE.md`, `research/gap_register.csv`, and `research/literature_matrix.csv`. This is a merge-preview result only; neither research branch was merged or modified by the preview. Both PRs are individually mergeable against G0. Reconcile the shared files in a reviewed integration change after the independent research reviews; do not treat the conflict resolution as a standards, legal, or clinical approval.
+
+## Role-separated review-readiness check
+
+A read-only Independent Validator / Terminology evidence audit was completed against branch snapshot `a2e8cbf60a4d014d6afa1d870e3e9b3ed0ca098b` on 2026-11-05. It found the nine pinned candidate snapshots, license evidence and limits, tested-versus-described boundaries, dependency manifest evidence, privacy caveats, literature/gap rows, and integration preview sufficient to invite human review. The audit did not identify a blocker to review readiness.
+
+This is an internal role-separated evidence check, **not** a GitHub review, legal clearance, source build/runtime/security result, dependency compatibility assessment, transitive-license review, or pass of CLINOS-002. Human Validator/Terminology review and all explicitly `NOT_ASSESSED` scopes remain open; task status remains `IN_PROGRESS`.
