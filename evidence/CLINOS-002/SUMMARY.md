@@ -6,7 +6,6 @@
 **Owner:** Research Director workflow (Codex execution)  
 **Independent reviewers:** Independent Validator and Terminology Steward — pending  
 **Execution status:** IN_PROGRESS; nine repositories inventoried; draft PR #10 open; independent review pending
-**Current branch head before this evidence refresh:** `f38142ebcb5458a7f5d5c034b1c8fb89fd5b38ae` (PR metadata is authoritative for the resulting head)
 **Related independent task:** CLINOS-001 is also IN_PROGRESS on `codex/clinos-001-standards-audit`, draft PR #9
 **Data boundary:** public source/metadata only; no candidate code cloned/built, no networked service tested, no patient/export data fetched
 
@@ -21,7 +20,7 @@ Read-only GitHub metadata checks were run for each candidate:
 - `gh api repos/<owner>/<repo>/commits/HEAD --jq '[.sha,.commit.author.date,.html_url] | @tsv'`
 - `gh api repos/<owner>/<repo>/license --jq '[.license.spdx_id,.html_url] | @tsv'`
 
-README, release, license and focused official docs were read for role and scope. Exact release/commit snapshots and license caveats appear in `research/oss_feature_matrix.md` and matrix rows SRC-005 through SRC-012.
+README, release, license and focused official docs were read for role and scope. Exact release/commit snapshots and license caveats appear in `research/oss_feature_matrix.md` and literature matrix rows SRC-005 through SRC-012 and SRC-019. The nine rows now identify dependency manifest/lock evidence; direct dependency graphs and transitive license review remain NOT_ASSESSED.
 
 ## Nine assessed candidates
 
@@ -45,7 +44,7 @@ README, release, license and focused official docs were read for role and scope.
 - Candidate projects were not cloned, built, benchmarked, security-reviewed or tested against live/synthetic endpoints. GitHub default-branch commit/release values are point-in-time observations.
 - Public EHI-to-FHIR repository description indicates real-record-derived material; no source record or report artifact was downloaded or used. Claims in its README were not independently reproduced.
 - License IDs do not constitute legal advice, compatibility analysis, or transitive dependency review.
-- Six additional, specific hypotheses have been added to `research/gap_register.csv`; all remain UNVERIFIED pending task-specific evidence.
+- Seven additional, specific hypotheses have been added to `research/gap_register.csv`; all remain UNVERIFIED pending task-specific evidence. GAP-013 records the unassessed direct/transitive dependency and license scope.
 
 ## Independent review and next action
 
