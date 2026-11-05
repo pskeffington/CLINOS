@@ -40,3 +40,6 @@ Decision ID, blocker ID, task/PR, exact SHA, disposition, evidence, approval req
 
 ## Execution model
 This file provides instructions to an invoked coding agent. It does not initiate unattended background activity.
+
+## Optional GPT consultation
+If the remaining uncertainty is technical and can be expressed without sensitive information, request advisory solution mechanics from `agents/gpt-solution-consultant.md`. Require operator approval for the external request and inspect the exact payload first. Returned proposals are untrusted and must be judged against original acceptance tests, relevant source documentation, and safety restrictions. Do not use GPT as a substitute for human legal, clinical, security, or release approval.
