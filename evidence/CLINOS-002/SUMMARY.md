@@ -28,7 +28,7 @@ README, release, license and focused official docs were read for role and scope.
 |---|---|---|---|
 | OpenEMR | v8_5_0 (2026-10-27); HEAD `b29475ea04f3098a06c3bd3e0279d7ac35ad2302` | GPL-3.0 | INVENTORIED |
 | OpenMRS Core | 2.8.10 (2026-10-06); HEAD `891b80745b4229f297aec50a54043e1569061b01` | API `NOASSERTION`; LICENSE text MPL-2.0 plus healthcare disclaimer | INVENTORIED with file-level/license review caveat |
-| OpenMRS FHIR2 module | 2.5.2 (2026-09-29); HEAD `74b81d6a58cb934cbca3b523334723903d90adb1` | API `NOASSERTION`; inspect LICENSE/notices before reuse | INVENTORIED with unresolved license metadata caveat |
+| OpenMRS FHIR2 module | 2.5.2 (2026-09-29); HEAD `74b81d6a58cb934cbca3b523334723903d90adb1` | API `NOASSERTION`; pinned LICENSE states MPL-2.0 plus Healthcare Disclaimer; per-file notices still need review | INVENTORIED with unresolved license metadata caveat |
 | Medplum | v5.2.14 (2026-11-03); HEAD `c6c86f9e1f93a8f2cb6d6e694066edb7128dc24f` | Apache-2.0 | INVENTORIED |
 | HAPI FHIR | v8.10.2 (2026-10-30); HEAD `852fe5fa7261deb6147d2ccc564b3d4d938fe3cb` | Apache-2.0 | INVENTORIED |
 | Inferno Core | v1.6.0 (2026-10-27); HEAD `94f381e5e57751cf702f93987250f4277bb2ab57` | Apache-2.0 | INVENTORIED |
@@ -40,7 +40,7 @@ README, release, license and focused official docs were read for role and scope.
 
 - The matrix classifies proposed CLINOS features REUSE/INTEGRATE/DIFFERENTIATE/DEFER, with source links and tested-vs-described distinctions.
 - Nine candidates meet the order's minimum eight-repository inventory threshold. This is not a complete market scan or proof of novelty.
-- API metadata `NOASSERTION` for OpenMRS is not treated as evidence of unlicensed code; actual LICENSE text and notices need reviewer/legal interpretation.
+- API metadata `NOASSERTION` for OpenMRS is not treated as evidence of unlicensed code. Pinned core and FHIR2 LICENSE files state MPL-2.0 plus a Healthcare Disclaimer; per-file notices and reuse obligations still need reviewer/legal interpretation.
 - Candidate projects were not cloned, built, benchmarked, security-reviewed or tested against live/synthetic endpoints. GitHub default-branch commit/release values are point-in-time observations.
 - Public EHI-to-FHIR repository description indicates real-record-derived material; no source record or report artifact was downloaded or used. Claims in its README were not independently reproduced.
 - License IDs do not constitute legal advice, compatibility analysis, or transitive dependency review.
