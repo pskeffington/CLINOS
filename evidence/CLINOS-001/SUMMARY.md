@@ -53,3 +53,16 @@ The work-order list (Patient, Encounter, Observation, ServiceRequest, Diagnostic
 ## Next decision
 
 Informatics and Terminology reviewers should confirm candidate FHIR/US Core/USCDI versions, applicable profiles, and code-system use terms. Until then CLINOS-003 synthetic clinical ground truth and CLINOS-005 semantic reconciliation remain blocked. CLINOS-007 must not begin normalization implementation from this inventory alone.
+
+## Cross-task integration preview
+
+On 2026-11-05, a read-only three-way merge preview was run with G0 `codex/g0-agent-roadmap-literature-scaffold` as merge base, CLINOS-001 at `11360553c0c247235c441a8251dcf79764954fc4`, and CLINOS-002 at `91ca616b01086939483a0f9b4991446b12c5b325`:
+
+```sh
+git merge-tree --write-tree --merge-base \
+  origin/codex/g0-agent-roadmap-literature-scaffold \
+  origin/codex/clinos-001-standards-audit \
+  origin/codex/clinos-002-oss-audit
+```
+
+The preview reported content conflicts in `docs/TASK_QUEUE.md`, `research/gap_register.csv`, and `research/literature_matrix.csv`. This is a merge-preview result only; neither research branch was merged or modified by the preview. Both PRs are individually mergeable against G0. Reconcile the shared files in a reviewed integration change after the independent research reviews; do not treat the conflict resolution as a standards, legal, or clinical approval.
