@@ -53,3 +53,6 @@ Local checks are not independent verification. Hosted CI for prior head `b0308dc
 
 ## Next execution
 Restore hosted CI startup, capture a successful exact-head workflow run, and obtain independent security/privacy and QA review. Continue to hold CLINOS-001/-002 source audits and CLINOS-003/-005 semantic contracts as gates for the next implementation wave.
+
+## Independent review request
+PR #8 is open in draft at head `14d3a4b744efe3ec015e5f129bdacb2ea4928dc4`. No independent reviewer has approved this change. Review request: verify bounded/error behavior and privacy non-disclosure, inspect the locked dependency license declarations, and confirm that status/wording does not imply FHIR conformance or clinical equivalence. Hosted exact-head CI is still pending because earlier workflow runs failed during startup.
