@@ -38,3 +38,6 @@ When a command, CI run, dependency, reviewer, source or permission blocks progre
 
 ## Unresolved Tier 1 blocker escalation
 After Block Resolution Agent reports unresolved, invoke the Resolution Decision Agent following `codex/ESCALATION_CHAIN.md`. Include the Tier 1 record, exact SHA, logs, attempts, blockers, alternative tasks and approval constraints. Obtain a documented Tier 2 disposition before splitting scope or selecting a different engineering approach. Respect all original safety and review gates. Report the resolution decision ID in the task summary.
+
+## Next authorized development pass
+Read `codex/NEXT_EXECUTION_ORDER.md` before selecting follow-up work. Prioritize independently reviewable CLINOS-001/002 source audits while CI startup and G0 approvals remain outstanding. Route unresolved blockers through Tier 1 and Tier 2. No clinical semantics implementation until approved contracts and evidence exist.
