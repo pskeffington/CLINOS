@@ -27,6 +27,34 @@ jobs:
       - name: Build
         run: cargo build --workspace
       - name: Synthetic positive preflight
-        run: cargo run --bin clinos -- preflight tests/fixtures/synthetic-bundle.json
+        run: |
+          output="$(cargo run --quiet --bin clinos -- preflight tests/fixtures/synthetic-bundle.json)"
+          echo "$output"
+          echo "$output" | grep -q '"total_entries":3'
+          echo "$output" | grep -q '"unresolved_entries":0'
+          echo "$output" | grep -q '"clinical_equivalence":"NOT_TESTED"'
       - name: Ambiguous fixture must report unresolved
-        run: cargo run --bin clinos -- preflight tests/fixtures/ambiguous-bundle.json | grep -q '"clinical_equivalence":"UNRESOLVED"'
+        run: |
+          output="$(cargo run --quiet --bin clinos -- preflight tests/fixtures/ambiguous-bundle.json)"
+          echo "$output"
+          echo "$output" | grep -q '"total_entries":2'
+          echo "$output" | grep -q '"unresolved_entries":1'
+          echo "$output" | grep -q '"clinical_equivalence":"UNRESOLVED"'
+      - name: CLI help
+        run: cargo run --quiet --bin clinos -- --help
+      - name: Missing file fails
+        run: |
+          if cargo run --quiet --bin clinos -- preflight tests/fixtures/not-present.json; then
+            echo 'expected missing-file failure'
+            exit 1
+          fi
+      - name: Malformed JSON fails without payload leakage
+        run: |
+          printf '%s' '{"resourceType":"Patient","id":"SYNTHETIC-SECRET"' > malformed.json
+          if output="$(cargo run --quiet --bin clinos -- preflight malformed.json 2>&1)"; then
+            rm malformed.json
+            echo 'expected malformed JSON failure'
+            exit 1
+          fi
+          rm malformed.json
+          ! echo "$output" | grep -q 'SYNTHETIC-SECRET'

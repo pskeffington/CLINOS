@@ -16,6 +16,7 @@ pub enum PreflightError {
     RootNotObject,
     MissingResourceType,
     InvalidBundleEntry,
+    InvalidEntry,
 }
 
 impl fmt::Display for PreflightError {
@@ -26,6 +27,7 @@ impl fmt::Display for PreflightError {
             Self::RootNotObject => "root JSON value must be an object",
             Self::MissingResourceType => "root resourceType must be a non-empty string",
             Self::InvalidBundleEntry => "Bundle entry must be an array if present",
+            Self::InvalidEntry => "Bundle entry must be an object",
         };
         f.write_str(message)
     }
@@ -68,6 +70,9 @@ pub fn inspect_json(input: &str) -> Result<PreflightSummary, PreflightError> {
                 .ok_or(PreflightError::InvalidBundleEntry)?;
             summary.total_entries = array.len();
             for entry in array {
+                if !entry.is_object() {
+                    return Err(PreflightError::InvalidEntry);
+                }
                 let resource_type = entry
                     .get("resource")
                     .and_then(Value::as_object)
@@ -75,7 +80,12 @@ pub fn inspect_json(input: &str) -> Result<PreflightSummary, PreflightError> {
                     .and_then(Value::as_str)
                     .filter(|value| !value.trim().is_empty());
                 match resource_type {
-                    Some(name) => *summary.resource_type_counts.entry(name.to_owned()).or_insert(0) += 1,
+                    Some(name) => {
+                        *summary
+                            .resource_type_counts
+                            .entry(name.to_owned())
+                            .or_insert(0) += 1
+                    }
                     None => summary.unresolved_entries += 1,
                 }
             }
@@ -129,6 +139,14 @@ mod tests {
         assert_eq!(
             inspect_json(r#"{"resourceType":"Bundle","entry":{}}"#),
             Err(PreflightError::InvalidBundleEntry)
+        );
+    }
+
+    #[test]
+    fn malformed_entry_rejected_without_interpreting_fields() {
+        assert_eq!(
+            inspect_json(r#"{"resourceType":"Bundle","entry":["synthetic-secret"]}"#),
+            Err(PreflightError::InvalidEntry)
         );
     }
 

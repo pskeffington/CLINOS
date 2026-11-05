@@ -3,7 +3,7 @@
 use clinos_evidence::preflight_report;
 use clinos_fhir::{inspect_json, MAX_INPUT_BYTES};
 use clinos_integrity::clinical_equivalence_status;
-use std::{env, fs, process};
+use std::{env, fs::File, io::Read, process};
 
 fn usage() {
     println!("CLINOS research prototype\nUsage: clinos preflight <synthetic-json-file>\n\nPerforms only JSON structural inspection. FHIR conformance and clinical equivalence are NOT_TESTED.");
@@ -21,15 +21,23 @@ fn run() -> Result<(), u8> {
     }
 
     // Read a bounded file before parsing; never echo source content on errors.
-    let metadata = fs::metadata(&arguments[1]).map_err(|_| {
-        eprintln!("cannot inspect input file metadata");
+    let mut file = File::open(&arguments[1]).map_err(|_| {
+        eprintln!("cannot read input as UTF-8 text");
         66
     })?;
-    if metadata.len() > MAX_INPUT_BYTES as u64 {
+    let mut bytes = Vec::with_capacity(MAX_INPUT_BYTES.min(64 * 1024));
+    file.by_ref()
+        .take((MAX_INPUT_BYTES + 1) as u64)
+        .read_to_end(&mut bytes)
+        .map_err(|_| {
+            eprintln!("cannot read input as UTF-8 text");
+            66
+        })?;
+    if bytes.len() > MAX_INPUT_BYTES {
         eprintln!("input exceeds prototype size limit");
         return Err(65);
     }
-    let input = fs::read_to_string(&arguments[1]).map_err(|_| {
+    let input = String::from_utf8(bytes).map_err(|_| {
         eprintln!("cannot read input as UTF-8 text");
         66
     })?;
