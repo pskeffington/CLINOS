@@ -35,3 +35,6 @@ On any blocker, delegate classification to `agents/block-resolution.md`. If the 
 
 ## Tier 2 routing
 If `agents/block-resolution.md` exhausts bounded remedies and cannot select an eligible fallback, request a disposition from `agents/resolution-decision.md`. Require a completed Tier 1 blocker record and register the Tier 2 decision using `codex/RESOLUTION_DECISION_TEMPLATE.md`. Do not change a blocked task to PASS based solely on a decision or route around independent approval requirements.
+
+## External advisory requests
+Route suitable unresolved engineering questions via Tier 2 to the GPT Solution Mechanics Consultant (`agents/gpt-solution-consultant.md`). Only dispatch reviewed proposals as normal scoped tasks after the required approvals; never run generated commands automatically or include secrets, patient data, private source, or raw logs in requests.

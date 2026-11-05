@@ -17,3 +17,6 @@
 For CLINOS-004 GitHub Actions startup failure, Tier 1 captures the failed workflow evidence and limited diagnostics. Tier 2 may defer hosted CI verification and recommend CLINOS-001 or CLINOS-002 research. It must not mark hosted CI as passed or merge a PR lacking required reviews.
 
 The agent roles are documentation for invoked Codex sessions; separate runner configuration is necessary for continuous automation.
+
+## Optional advisory branch
+If Tier 2 requires additional engineering hypotheses, it may consult `agents/gpt-solution-consultant.md` through an explicitly approved external call. Route candidate mechanics back to Tier 2. The consultant is not a third approval authority, does not automatically execute suggestions, and cannot change existing blockers to PASS.

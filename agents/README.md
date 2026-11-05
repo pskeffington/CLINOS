@@ -31,3 +31,5 @@ Agents are roles for planning and review; these files do not imply autonomous ba
 **Blocker control:** `agents/block-resolution.md`, `codex/CONTINUITY_POLICY.md` and `codex/BLOCK_DECISION_TEMPLATE.md` define safe continuation; they do not launch an always-on service.
 
 **Tier 2 escalation:** The Resolution Decision Agent (`agents/resolution-decision.md`) receives unresolved cases from the Block Resolution Agent, selects a documented disposition, and returns it to the Codex Orchestrator. See `codex/ESCALATION_CHAIN.md`.
+
+**GPT Solution Mechanics Consultant:** Advisory GPT proposal generator after Tier 2 request. Uses explicit approval and curated allowlisted context; returns unverified solution options to the Resolution Decision Agent. See `agents/gpt-solution-consultant.md`.

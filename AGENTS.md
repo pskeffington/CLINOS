@@ -50,3 +50,8 @@ Every change must document: task ID, hypothesis, tested input corpus and version
 - **Resolution Decision Agent** (`agents/resolution-decision.md`) receives unresolved Tier 1 blocker records and decides whether to split scope, select an alternate approved method, defer, research, escalate or stop.
 - Follow `codex/ESCALATION_CHAIN.md` and `codex/RESOLUTION_DECISION_TEMPLATE.md`.
 - Tier 2 decisions do not override CI, human review, clinical, privacy, security, licensing, or branch-protection requirements. The original task remains blocked until evidence establishes recovery.
+
+## GPT Solution Mechanics Consultant (advisory)
+- `agents/gpt-solution-consultant.md` adds an optional external GPT consultation when Tier 2 Resolution Decision requests technical solution candidates.
+- For every consultation, use `codex/GPT_CONSULTATION.md`. Preview the allowlisted payload locally before explicitly approving transmission. No patient data, source dumps, raw logs, credentials or proprietary material.
+- GPT proposals are **PROPOSED_UNVERIFIED** and return to Tier 2 for admissibility review. They cannot unblock clinical/security/CI gates, approve changes, or trigger execution by themselves.
