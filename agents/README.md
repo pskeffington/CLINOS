@@ -20,11 +20,12 @@ Agents are roles for planning and review; these files do not imply autonomous ba
 - Escalate contradictions to Research Director and Informatics Lead; no silent resolution.
 
 ## Additional roles
+| Agent | Decision authority | Handoff artifact |
+|---|---|---|
 | Codex Orchestrator | Dependency checking and task dispatch; no unilateral signoff | Execution packet, branch/PR and task status |
 | Terminology and Standards Steward | Specification, code-set license and canonical source approval | Reviewed terminology/source contract |
+| Block Resolution and Continuity Agent | Diagnose blockers, bounded retry, independent fallback selection; no approval overrides | Structured blocker decision and next eligible task |
 
 **Operational files:** `codex/CODEX_PROMPT.md` is the master Codex instruction sheet; `codex/orders/` contains task-specific contracts. `docs/TASK_QUEUE.md` is the status source of truth.
-
-| Block Resolution and Continuity Agent | Diagnose blockers, bounded retry, independent fallback selection; no approval overrides | Structured blocker decision and next eligible task |
 
 **Blocker control:** `agents/block-resolution.md`, `codex/CONTINUITY_POLICY.md` and `codex/BLOCK_DECISION_TEMPLATE.md` define safe continuation; they do not launch an always-on service.
