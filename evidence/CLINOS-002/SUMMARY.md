@@ -5,7 +5,9 @@
 **Base:** `codex/g0-agent-roadmap-literature-scaffold` at `bbe40ea72cff62e9aa79a790bfb0eb6886a24437`  
 **Owner:** Research Director workflow (Codex execution)  
 **Independent reviewers:** Independent Validator and Terminology Steward — pending  
-**Execution status:** IN_PROGRESS; nine repositories inventoried; independent review pending  
+**Execution status:** IN_PROGRESS; nine repositories inventoried; draft PR #10 open; independent review pending
+**Current branch head before this evidence refresh:** `f38142ebcb5458a7f5d5c034b1c8fb89fd5b38ae` (PR metadata is authoritative for the resulting head)
+**Related independent task:** CLINOS-001 is also IN_PROGRESS on `codex/clinos-001-standards-audit`, draft PR #9
 **Data boundary:** public source/metadata only; no candidate code cloned/built, no networked service tested, no patient/export data fetched
 
 ## Method and reproducibility
