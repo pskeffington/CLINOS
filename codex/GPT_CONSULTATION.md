@@ -34,3 +34,6 @@ HTTP/API error, malformed response, timeout or missing configuration -> `NOT_QUE
 
 ## API source
 OpenAI Responses API documentation: https://platform.openai.com/docs/api-reference/responses
+
+## Next verification pass
+Follow `codex/orders/CLINOS-014-gpt-consult-hardening.md` for offline test execution, payload and schema hardening, fake transport failure cases, audit metadata and independent security/QA review. Existing sample consultation behavior remains experimental and must be verified on a real code-enabled checkout. No live API calls in CI.
