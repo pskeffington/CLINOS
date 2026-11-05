@@ -11,6 +11,8 @@
 **Data boundary:** public specifications and metadata only; no patient records, Epic endpoints, or exports accessed  
 **Claims:** no conformance, Epic compatibility, legal clearance, or clinical equivalence claims
 
+**Cross-task CI status:** PR #8 head `906f2cdc823470a234b3aa2fb7677b29d163803b`; exact-head run [41944441203](https://github.com/pskeffington/CLINOS/actions/runs/41944441203) ended `startup_failure` with zero jobs/artifacts. Hosted CI remains blocked; Tier 1 fallback and Tier 2 DEFER remain in effect.
+
 ## Reproducible source check
 
 Access date recorded as 2026-11-04. Sources were opened via official publisher/owner websites. Primary references and exact versions/current-publication observations are in `research/standards_inventory.md` and CSV source rows SRC-001 through SRC-004 and SRC-013 through SRC-018.
