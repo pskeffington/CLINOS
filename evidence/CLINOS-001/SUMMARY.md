@@ -5,7 +5,9 @@
 **Base:** `codex/g0-agent-roadmap-literature-scaffold` at `bbe40ea72cff62e9aa79a790bfb0eb6886a24437`  
 **Owner:** Research Director workflow (Codex execution)  
 **Independent reviewers:** Clinical Informatics Lead and Terminology Steward — pending  
-**Execution status:** IN_PROGRESS; primary-source inventory authored; independent approval and applicability mapping outstanding  
+**Execution status:** IN_PROGRESS; primary-source inventory authored; draft PR #9 open; independent approval and applicability mapping outstanding
+**Current branch head before this evidence refresh:** `0ad9b1015d7e60d6d84846eaf992d4b8c5b61240` (PR metadata is authoritative for the resulting head)
+**Related independent task:** CLINOS-002 is also IN_PROGRESS on `codex/clinos-002-oss-audit`, draft PR #10
 **Data boundary:** public specifications and metadata only; no patient records, Epic endpoints, or exports accessed  
 **Claims:** no conformance, Epic compatibility, legal clearance, or clinical equivalence claims
 
@@ -17,7 +19,7 @@ Access date recorded as 2026-11-04. Sources were opened via official publisher/o
 |---|---|---|
 | FHIR | R4 v4.0.1, technical correction dated 2019-10-30; HL7 says current published base release is 5.0.0. R4 content has mixed normative/trial-use statuses. | Informatics must select use-case artifacts and versions. CC0 spec-text license does not grant third-party code-system rights. |
 | US Core | Current published at source was STU 9 v9.0.0, based on FHIR 4.0.1; page generated 2026-05-31; Trial-use, Maturity Level 3. | Minimum US Realm profiles/interactions are not whole-EHI coverage. Reviewer must choose whether applicable. |
-| SMART | STU 2.2 v2.2.0, active 2023-03-01, generated 2024-04-30, R4 IG. | Registration and server/operator authorization remain separate and can be out of band; no endpoint or auth was attempted. |
+| SMART | STU 2.2 v2.2.0, active 2023-03-01, generated 2024-04-30, R4 IG. | Publisher/IP statements appear in the guide; no blanket CC0 grant for all guide content was verified. Registration and server/operator authorization remain separate and can be out of band; no endpoint or auth was attempted. |
 | USCDI | Official version list identifies v7 (July 2026) as current at access. | Data classes/elements are not a FHIR schema or complete EHI mapping. |
 | ONC EHI Export | 45 CFR 170.315(b)(10) covers applicable single-patient and patient-population EHI exports in computable electronic format and up-to-date public format docs. | Criterion does not mandate FHIR or guarantee instance completeness/semantic fidelity. It applies to relevant certified products/developers. |
 | Epic public docs | Epic on FHIR documentation lists APIs across DSTU2/STU3/R4 and registration/customer authorization constraints; EHI Tables docs describe TSV/schema and warn local versions/customization differ. | Public docs are not authorization to access a customer installation or proof of full interoperability. Public schema terms not legally reviewed. |
